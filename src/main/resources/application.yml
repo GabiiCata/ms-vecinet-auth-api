@@ -7,3 +7,20 @@ spring:
     mongodb:
       uri: ${MONGO_URL}
       database: ${MONGO_DB}
+
+# Configuracion de Swagger Open Api
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    displayRequestDuration: true
+  openapi:
+    info:
+      title: Vecinet API
+      description: API documentation for Vecinet Authenticator
+      version: v1.0.0
+      contact:
+        name: Vecinet Support
+        url: http://vecinet.com/support
+        email: support@vecinet.com

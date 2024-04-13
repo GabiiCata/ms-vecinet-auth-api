@@ -2,6 +2,9 @@
 
 Api de vecinet para autenticar usuarios y los microservicios que se utilizan
 
+## Swagger UI Documentation
+> local :  http://localhost:8081/swagger-ui/index.html
+
 ## Tecnologías
 > Graalvm - Java 21
 
