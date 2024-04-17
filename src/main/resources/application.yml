@@ -1,8 +1,10 @@
 server:
   port: ${APP_PORT}
+  servlet:
+    context-path: /api/ms-vecinet-auth
 spring:
   application:
-    name: auth
+    name: ms-vecinet-auth
   data:
     mongodb:
       uri: ${MONGO_URL}
@@ -32,3 +34,12 @@ logging:
 jwt:
   secret: ${JWT_SECRET}
   expiration: ${JWT_EXPIRATION}
+
+# Eureka client
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}

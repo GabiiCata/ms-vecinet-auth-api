@@ -6,20 +6,18 @@ import io.jsonwebtoken.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import com.vecinet.auth.dtos.UserAccountRequestDto;
 
 @RestController
-@Controller
+@RequestMapping("/authenticate")
 public class AuthenticationController {
 
     @Autowired JWTUtils jwtUtils;
 
-    @PostMapping("/authenticate")
+    @PostMapping
     public ResponseEntity<?> generateToken(@RequestBody UserAccountRequestDto userAccount) {
          // Token válido por una hora
         try

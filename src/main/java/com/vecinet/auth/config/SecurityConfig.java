@@ -18,6 +18,7 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
 
                 .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/authenticate/**").permitAll()
                         .requestMatchers(
                                 "/v2/api-docs",
                                 "/swagger-resources/**",
@@ -25,8 +26,7 @@ public class SecurityConfig {
                                 "/webjars/**",
                                 "/swagger.json"
                                 ).permitAll()
-                        .requestMatchers("/authenticate").permitAll()
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 );
 
         return http.build();
