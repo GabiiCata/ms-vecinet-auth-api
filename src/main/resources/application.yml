@@ -1,7 +1,3 @@
-server:
-  port: ${APP_PORT}
-  servlet:
-    context-path: /api/ms-vecinet-auth
 spring:
   application:
     name: ms-vecinet-auth
@@ -9,6 +5,11 @@ spring:
     mongodb:
       uri: ${MONGO_URL}
       database: ${MONGO_DB}
+
+server:
+  port: ${APP_PORT}
+  servlet:
+    context-path: /api/${spring.application.name}
 
 # Configuracion de Swagger Open Api
 springdoc:
