@@ -39,10 +39,6 @@ dependencies {
 	implementation 'io.jsonwebtoken:jjwt:0.9.1'
 	runtimeOnly 'io.jsonwebtoken:jjwt:0.9.1'
 	implementation 'javax.xml.bind:jaxb-api:2.3.1' // O cualquier otra versión que desees
-	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-
-
-
 }
 
 dependencyManagement {
@@ -53,4 +49,8 @@ dependencyManagement {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+bootJar {
+	mainClass = 'com.vecinet.auth.AuthApplication'
 }
