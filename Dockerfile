@@ -13,6 +13,6 @@ COPY src src
 RUN chmod +x ./gradlew
 RUN ./gradlew build
 
-EXPOSE 8081
+EXPOSE 8092
 
 CMD ["java", "-jar", "build/libs/ms-vecinet-auth-0.0.1.jar"]
